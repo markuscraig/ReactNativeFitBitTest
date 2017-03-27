@@ -27,10 +27,9 @@ export default class ReactNativeFitBitTest extends Component {
     Linking.addEventListener('url', this._handleOpenURL);
 
     // Call OAuth
-    var client_id = config.client_id;
     const oauthurl = 'https://www.fitbit.com/oauth2/authorize?'+
               qs.stringify({
-                client_id,
+                client_id: config.client_id,
                 response_type: 'token',
                 scope: 'heartrate activity activity profile sleep',
                 redirect_uri: 'fithub://oauth2/callback/fitbit',
